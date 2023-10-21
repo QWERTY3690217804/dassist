@@ -35,7 +35,7 @@ const Major = ({ onSelectMajor }) => {
 
     const handleMajorSelection = (major) => {
         setSelectedMajor(major);
-        onSelectMajor(major); // Pass the selected major back to the parent component
+        onSelectMajor(major); 
       };
     
     return (

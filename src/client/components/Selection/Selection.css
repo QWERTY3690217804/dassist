@@ -13,8 +13,18 @@ background: linear-gradient(90deg, rgb(148, 203, 173) 0%, rgb(102, 184, 211) 35%
     width:100vw;
 }
 
-.Selection h1 {
+.selection-title {
     text-align:center;
     font-size:300%;
 }
 
+.selection-button {
+    width:20%;
+    margin-left:43%;
+    text-align: center;
+    font-size:200%;
+    border-radius:20px;
+    border:none;
+    background-color:white;
+    padding:10px;
+}

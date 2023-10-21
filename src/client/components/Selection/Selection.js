@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
-function Selection ({ onSelectMajor }) {
+function Selection ({  }) {
     const [selectedMajor, setSelectedMajor] = useState("");
     const navigate = useNavigate();
     const handleSelectMajor = (major) => {
@@ -12,23 +12,22 @@ function Selection ({ onSelectMajor }) {
       };
 
     const handleNavigate = () => {
-    if (selectedMajor) {
-        // Redirect to a different page when a major is selected
-        navigate('/school');
-    } else {
-        alert('Please select a major before proceeding.');
-    }
+        if (selectedMajor) {
+            navigate(`/school?major=${selectedMajor}`);
+        } else {
+            alert("Please pick a major");
+        }
     };
 
   return (
     <div className="Selection">
-      <h1>What's your major?</h1>
+      <p className="selection-title">What's your major?</p>
       <div className="selection-grid">
         <Major onSelectMajor={handleSelectMajor}/>
       </div>
-      <button onClick={handleNavigate}>
+      <button className="selection-button" onClick={handleNavigate}>
         Go to Major Page
-      </button>     
+      </button>   
     </div>
   );
 }

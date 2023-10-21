@@ -1,0 +1,32 @@
+.University {
+    display:flex;
+    flex-direction:column;
+    color:white;
+    background: rgb(28,215,113);
+background: linear-gradient(90deg, rgb(148, 203, 173) 0%, rgb(102, 184, 211) 35%, rgb(130, 127, 183) 100%);
+    height:100vh;
+}
+
+.university-title {
+    font-size:300%;
+    margin-left:5%;
+}
+
+.university-list {
+    list-style-type: none;
+    padding: 0; 
+    margin: 0;
+}
+
+.university-button {
+    width:20%;
+    position:absolute;
+    top:60%;
+    margin-left:43%;
+    text-align: center;
+    font-size:200%;
+    border-radius:20px;
+    border:none;
+    background-color:white;
+    padding:10px;
+}
