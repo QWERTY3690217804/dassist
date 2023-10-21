@@ -1,5 +1,4 @@
 import Major from '../Major/Major.js';
-import MajorButton from '../MajorButton/MajorButton.js';
 import './Selection.css';
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
