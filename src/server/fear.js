@@ -1,37 +1,42 @@
 const express = require('express');
 const mysql = require('mysql2');
+let cors = require("cors");
 const app = express();
-const port = 8000;
+app.use(cors());
 
+// Create a MySQL connection
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "G4nX5fkaaXpBz64739ZS",
-  database: "dassist_schema"
+  host: 'localhost',
+  user: 'root',
+  password: 'G4nX5fkaaXpBz64739ZS',
+  database: 'dassist_schema',
 });
 
+// Connect to the database
 db.connect((err) => {
   if (err) {
-    console.error('Database connection failed: ' + err.stack);
+    console.error('Error connecting to MySQL: ' + err);
     return;
   }
-  console.log('Connected to the database');
+  console.log('Connected to MySQL');
 });
 
-app.get('/api/college/:college_id', (req, res) => {
-  const collegeId = req.params.college_id;
-  db.query('SELECT college_name FROM college WHERE college_id = ?', [collegeId], (err, results) => {
+// Define a route to retrieve and display college names
+app.get('/colleges', (req, res) => {
+  // Perform a simple query to select college names
+  db.query('SELECT college_name FROM college', (err, results) => {
     if (err) {
-      console.error('Error querying the database: ' + err.stack);
-      return res.status(500).json({ error: 'Database error' });
+      console.error('Error querying the database: ' + err);
+      res.status(500).send('Error querying the database');
+      return;
     }
-    if (results.length === 0) {
-      return res.status(404).json({ error: 'College not found' });
-    }
-    res.json(results[0]);
+
+    // Send the results as JSON
+    res.json(results);
   });
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+// Start the Express server
+app.listen(4120, () => {
+  console.log('Server is running on port 4000');
 });
