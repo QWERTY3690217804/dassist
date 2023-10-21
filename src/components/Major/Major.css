@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Varela';
+    src: local('Varela'), url(../../assets/VarelaRound-Regular.ttf) format('truetype');
+  }
+
+.major-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr); 
+    grid-template-rows: repeat(3,1fr);
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+}
+
+.major-item {
+    font-size:150%;
+    width:90%;
+    height:90%;
+    border-radius:10px;
+    background-color:white;
+    border:none;
+    font-family: Varela;
+    padding:5%;
+}
+
+.major-item a {
+    margin-top:10%;
+}

@@ -1,0 +1,20 @@
+.Selection {
+    display:flex;
+    flex-direction:column;
+    color:white;
+    background: rgb(28,215,113);
+background: linear-gradient(90deg, rgb(148, 203, 173) 0%, rgb(102, 184, 211) 35%, rgb(130, 127, 183) 100%);
+    height:100vh;
+}
+
+.selection-grid {
+    display:flex;
+    justify-content:center;
+    width:100vw;
+}
+
+.Selection h1 {
+    text-align:center;
+    font-size:300%;
+}
+
