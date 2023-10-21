@@ -22,8 +22,9 @@ const buttonData = [ {major: 'Biology', imageSrc: biology},
                     ]
     
 
-const Major = () => {
+const Major = ({ onSelectMajor }) => {
     const [isVisible, setVisible] = useState(false);
+    const [selectedMajor, setSelectedMajor] = useState("");
 
     //1000ms
     useEffect(() => {
@@ -32,6 +33,11 @@ const Major = () => {
         }, 1000);
     }, []);
 
+    const handleMajorSelection = (major) => {
+        setSelectedMajor(major);
+        onSelectMajor(major); // Pass the selected major back to the parent component
+      };
+    
     return (
         <div className="major-grid">
             {buttonData.map((data, index) => (
@@ -44,6 +50,7 @@ const Major = () => {
                   alignItems: 'center', // Center vertically
                   justifyContent: 'center', // Center horizontally
                 }}
+                onClick={() => handleMajorSelection(data.major)}
               >
                 <img
                   src={data.imageSrc}
